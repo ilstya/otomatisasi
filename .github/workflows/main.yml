@@ -27,7 +27,7 @@ jobs:
           docker run --rm \
           -v $(pwd):/workspace \
           -w /workspace \
-          openjdk:23-jdk ./gradlew clean test
+          openjdk:23-jdk bash -c "chmod +x ./gradlew && ./gradlew clean test"
 
       # Langkah 4: Simpan artefak hasil pengujian
       - name: Upload test results
